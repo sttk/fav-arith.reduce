@@ -1,6 +1,6 @@
 {
   "name": "@fav/arith.reduce",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Reduces a number for accurate arithmetics.",
   "main": "index.js",
   "files": [
