@@ -78,5 +78,12 @@ describe('fav.arith.reduce', function() {
     expect(anum.isAccurate()).to.equal(true);
   });
 
+  it('Should attach the reduce function to ArithNumber.prototype', function() {
+    var anum0 = new ArithNumber(123, 45, 1);
+    var anum1 = anum0.reduce();
+    expect(anum1).to.deep.equal(new ArithNumber(82, 3, 0));
+    expect(anum1.isAccurate()).to.equal(true);
+  });
+
 });
 

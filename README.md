@@ -23,12 +23,13 @@ $ npm install --save @fav/arith.number @fav/arith.reduce
 For Node.js:
 
 ```js
-var reduce = require('@fav/arith.reduce');
 var ArithNumber = require('@fav/arith.number');
+var reduce = require('@fav/arith.reduce');
 
 var num1 = new ArithNumber(123, 45, 1);  // => { numerator: 123, denominator: 45, exponent: 1 }
 
-var num2 = num1.reduce();  // => { numerator: 41, denominator: 15, exponent: 1 }
+var num2 = reduce(num1);  // => { numerator: 82, denominator: 3, exponent: 1 }
+var num3 = num1.reduce(); // => { numerator: 82, denominator: 3, exponent: 1 }
 ```
 
 For Web browsers:
@@ -37,12 +38,13 @@ For Web browsers:
 <script src="fav.arith.number.min.js"></script>
 <script src="fav.arith.reduce.min.js"></script>
 <script>
+var ArithNumber = fav.arith.number;
 var reduce = fav.arith.reduce;
-var arithNumber = fav.arith.number;
 
 var num1 = new ArithNumber(123, 45, 1);  // => { numerator: 123, denominator: 45, exponent: 1 }
 
-var num2 = num1.reduce();  // => { numerator: 41, denominator: 15, exponent: 1 }
+var num2 = reduce(num1);  // => { numerator: 82, denominator: 3, exponent: 1 }
+var num3 = num1.reduce(); // => { numerator: 82, denominator: 3, exponent: 1 }
 </script>
 ```
 
@@ -53,6 +55,8 @@ var num2 = num1.reduce();  // => { numerator: 41, denominator: 15, exponent: 1 }
 
 Reduces an ArithNumber object which consists of three integer: numerator, denominator, exponent and of which value is ( numerator / denominator ) * 10^exponent.
 
+This function reducesto get a possibly minimal *denominator* with decreasing *exponent*. For example, `(9 / 6)` is reduced to not `(3 / 2)` but `(15 / 1) * 10^1`.
+
 #### Parameters:
 
 | Parameter   |  Type       | Description                              |
@@ -61,7 +65,19 @@ Reduces an ArithNumber object which consists of three integer: numerator, denomi
 
 #### Returns:
 
-An new ArithNumber object which was reduced.
+A new ArithNumber object which was reduced.
+
+**Type:** ArithNumber 
+
+### <u>ArithNumber.prototype.reduce() : ArithNumber</u>
+
+This package attaches `reduce` function to ArithNumber's prototype as its method.
+
+This method reduces the value of ArithNumber object itself and returns a new ArithNumber object having this reduced value.
+
+#### Returns:
+
+A new ArithNumber object which was reduced.
 
 **Type:** ArithNumber 
 

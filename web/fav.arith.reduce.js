@@ -37,6 +37,10 @@ function reduce(arithNum) {
   return new ArithNumber(n, d, e);
 }
 
+ArithNumber.prototype.reduce = function() {
+  return reduce(this);
+};
+
 module.exports = reduce;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})

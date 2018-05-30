@@ -35,4 +35,8 @@ function reduce(arithNum) {
   return new ArithNumber(n, d, e);
 }
 
+ArithNumber.prototype.reduce = function() {
+  return reduce(this);
+};
+
 module.exports = reduce;
