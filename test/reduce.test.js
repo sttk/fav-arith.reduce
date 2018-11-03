@@ -80,7 +80,7 @@ describe('fav.arith.reduce', function() {
 
   it('Should stop reducing when numerator exceeds the limit', function() {
     var anum = reduce(new ArithNumber(ArithNumber.MAX_SAFE_NUMERATOR, 15, 0));
-    expect(anum.numerator).to.equal(Number.MAX_SAFE_INTEGER);
+    expect(anum.numerator).to.equal(ArithNumber.MAX_SAFE_NUMERATOR);
     expect(anum.denominator).to.equal(15);
     expect(anum.exponent).to.equal(0);
     expect(anum.isAccurate()).to.equal(true);
