@@ -55,7 +55,7 @@ var num3 = num1.reduce(); // => { numerator: 82, denominator: 3, exponent: 1 }
 
 Reduces an ArithNumber object which consists of three integer: numerator, denominator, exponent and of which value is ( numerator / denominator ) * 10^exponent.
 
-This function reduces to get a possibly minimal *denominator* with decreasing *exponent*. For example, `(9 / 6)` is reduced to not `(3 / 2)` but `(15 / 1) * 10^1`.
+This function reduces to get a possibly minimal *denominator* with decreasing *exponent*. For example, `(9 / 6)` is reduced to not `(3 / 2)` but `(15 / 1) * 10^-1`.
 
 #### Parameters:
 
