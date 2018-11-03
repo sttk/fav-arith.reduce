@@ -84,7 +84,15 @@ A new ArithNumber object which was reduced.
 
 ## Checked                                                                      
 
-### Node.js (4〜)
+### Node.js (11〜)
+
+| Platform  |   11   |
+|:---------:|:------:|
+| macOS     |&#x25ef;|
+| Windows10 |&#x25ef;|
+| Linux     |&#x25ef;|
+
+### Node.js (4〜10)
 
 | Platform  |   4    |   5    |   6    |   7    |   8    |   9    |   10   |
 |:---------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
@@ -125,7 +133,7 @@ This program is free software under [MIT][mit-url] License.
 See the file LICENSE in this distribution for more details.
 
 [repo-url]: https://github.com/sttk/fav-arith.reduce/
-[npm-img]: https://img.shields.io/badge/npm-v0.1.1-blue.svg
+[npm-img]: https://img.shields.io/badge/npm-v0.1.2-blue.svg
 [npm-url]: https://www.npmjs.com/package/@fav/arith.reduce
 [mit-img]: https://img.shields.io/badge/license-MIT-green.svg
 [mit-url]: https://opensource.org/licenses/MIT
