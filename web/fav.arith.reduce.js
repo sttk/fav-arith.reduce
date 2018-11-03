@@ -24,6 +24,7 @@ function reduce(arithNum) {
 
   var n10;
   while (((n10 = n * 10) <= ArithNumber.MAX_SAFE_NUMERATOR) &&
+         (e > -ArithNumber.MAX_SAFE_EXPONENT) &&
          (g = gcd(d, 10)) !== 1) {
     n = n10 / g;
     d = d / g;

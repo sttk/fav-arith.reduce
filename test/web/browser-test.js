@@ -79,6 +79,22 @@ describe('fav.arith.reduce', function() {
     expect(anum.isAccurate()).to.equal(true);
   });
 
+  it('Should stop reducing when numerator exceeds the limit', function() {
+    var anum = reduce(new ArithNumber(ArithNumber.MAX_SAFE_NUMERATOR, 15, 0));
+    expect(anum.numerator).to.equal(Number.MAX_SAFE_INTEGER);
+    expect(anum.denominator).to.equal(15);
+    expect(anum.exponent).to.equal(0);
+    expect(anum.isAccurate()).to.equal(true);
+  });
+
+  it('Should stop reducing when exponent exceeds the limit', function() {
+    var anum = reduce(new ArithNumber(13, 15, -ArithNumber.MAX_SAFE_EXPONENT));
+    expect(anum.numerator).to.equal(13);
+    expect(anum.denominator).to.equal(15);
+    expect(anum.exponent).to.equal(-ArithNumber.MAX_SAFE_EXPONENT);
+    expect(anum.isAccurate()).to.equal(true);
+  });
+
   it('Should attach the reduce function to ArithNumber.prototype', function() {
     var anum0 = new ArithNumber(123, 45, 1);
     var anum1 = anum0.reduce();
